@@ -1,5 +1,5 @@
-import NextLink from "next/link"
 import { forwardRef } from "react"
+import { Link } from "react-router"
 
 export const Anchor = forwardRef(({ href = "", children, newWindow, ...props }, forwardedRef) => {
     if (newWindow) {
@@ -19,9 +19,9 @@ export const Anchor = forwardRef(({ href = "", children, newWindow, ...props }, 
     }
 
     return (
-        <NextLink ref={forwardedRef} href={href} {...props}>
+        <Link ref={forwardedRef} to={href} {...props}>
             {children}
-        </NextLink>
+        </Link>
     )
 })
 

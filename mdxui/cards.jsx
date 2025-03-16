@@ -1,5 +1,5 @@
 import cn from "clsx"
-import NextLink from "next/link"
+import { Link } from "react-router"
 
 const classes = {
     cards: cn(
@@ -23,8 +23,8 @@ export function Card({ children, title, icon, image, arrow, href, ...props }) {
 
     if (image) {
         return (
-            <NextLink
-                href={href}
+            <Link
+                to={href}
                 className={cn(
                     classes.card,
                     "bg-gray-100 shadow dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-50 hover:shadow-lg dark:hover:border-neutral-500 dark:hover:bg-neutral-700"
@@ -39,13 +39,13 @@ export function Card({ children, title, icon, image, arrow, href, ...props }) {
                         {animatedArrow}
                     </span>
                 </span>
-            </NextLink>
+            </Link>
         )
     }
 
     return (
-        <NextLink
-            href={href}
+        <Link
+            to={href}
             className={cn(
                 classes.card,
                 "bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
@@ -57,7 +57,7 @@ export function Card({ children, title, icon, image, arrow, href, ...props }) {
                 {title}
                 {animatedArrow}
             </span>
-        </NextLink>
+        </Link>
     )
 }
 

@@ -2,6 +2,7 @@ import React from "react"
 import { Navbar } from "./navbar"
 import { Github, Twitter } from "@/icons"
 import { Logo } from "@/icons/logo"
+import { Link } from "react-router"
 
 export function Header() {
     // console.log("go here")
@@ -11,12 +12,12 @@ export function Header() {
         //     </div>
         //     <nav className="mx-auto flex h-[var(--openhuman-navbar-height)] max-w-[90rem] items-center justify-end gap-4 pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)]">
         <Navbar>
-            <a className="flex items-center hovesr:opacity-75 ltr:mr-auto rtl:ml-auto" href="/">
+            <Link className="flex items-center hovesr:opacity-75 ltr:mr-auto rtl:ml-auto" href="/">
                 <Logo height="40" width="40" className="h-10" />
                 <span className="max-md:hidden select-none font-extrabold ltr:ml-2 rtl:mr-2" title="OpenHuman.github.io: Gesture Generation Research Community">
                     OpenHuman
                 </span>
-            </a>
+            </Link>
             {/* <a className="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 max-md:hidden whitespace-nowrap font-medium subpixel-antialiased" aria-current="true" href="/docs/getting-started">Docs</a> */}
             {/* <div className="relative" data-headlessui-state="">
                 <button className="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 max-md:hidden items-center whitespace-nowrap rounded flex gap-1" id="headlessui-menu-button-:R5596:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">About<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-[18px] min-w-[18px] rounded-sm p-0.5">

@@ -58,8 +58,35 @@ export default defineConfig({
                 ],
                 remarkStaticImage,
                 [remarkStructurize, { codeblocks: true }],
-            ], // Enables GitHub Flavored Markdown
-            rehypePlugins: [], // Enables syntax highlighting
+            ],
+            rehypePlugins: [
+                rehypeAutolinkHeadings,
+                [
+                    rehypePrettyCode,
+                    {
+                        theme: "github-light",
+                        keepBackground: false,
+                        onVisitHighlightedLine(node) {
+                            node.properties.className = ["highlighted"]
+                        },
+                        onVisitHighlightedWord(node) {
+                            node.properties.className = ["highlighted-word"]
+                        },
+                    },
+                ],
+                [rehypeParseCodeMeta, { defaultShowCopyCode: true }],
+                rehypeStringify,
+                rehypeKatex,
+                [
+                    rehypeShiki,
+                    {
+                        theme: "github-light",
+                    },
+                ],
+                rehypeIcon,
+                rehypeAttachCodeMeta,
+                rehypeExtractTocContent,
+            ],
         }),
         tailwindcss(),
         react(),
