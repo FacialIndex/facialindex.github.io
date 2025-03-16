@@ -97,4 +97,7 @@ export default defineConfig({
             "@/": `${path.resolve(__dirname, "")}/`, // Alias for the "src" directory
         },
     },
+    optimizeDeps: {
+        include: ["@mdx-js/react"],
+    },
 })
