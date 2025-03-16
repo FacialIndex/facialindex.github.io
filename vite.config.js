@@ -98,6 +98,7 @@ export default defineConfig({
         createHtmlPlugin(),
         SitemapPlugin({
             hostname: "https://facialindex.github.io",
+            dynamicRoutes: ["/about", "/contact", "/markdown", "/sample", "/table", "/home"],
         }),
     ],
     resolve: {
