@@ -51,4 +51,4 @@ const components = {
     pre: Pre,
     code: Code,
 }
-export default components
+export { components }

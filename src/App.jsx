@@ -1,49 +1,34 @@
-// import { BrowserRouter, StaticRouter, Route, Routes } from "react-router-dom"
 import RootLayout from "./layout"
-
 import { Home } from "@/src/routes/home/Home"
-import components from "./mdxComponents"
+import { components } from "./mdxComponents"
 import { BrowserRouter, Route, Routes } from "react-router"
 import { MDXProvider } from "@mdx-js/react"
-// // Lazy load components
-// const Home = lazy(() => import("./pages/Home"));
-// const About = lazy(() => import("./pages/About"));
-// const Page = lazy(() => import("./pages/Page"));
-// const NotFound = lazy(() => import("./pages/NotFound"));
+import { lazy } from "react"
 
-// import { About } from "./about/About.jsx"
-// import About from "./about/page.mdx"
-import About from "./routes/about/page.mdx"
-import Contact from "./routes/contact/page.mdx"
-import Markdown from "./routes/markdown/page.mdx"
-// import Sample from "./routes/sample/page.mdx"
-// import Table from "./routes/table/page.mdx"
-// import Theme from "./routes/theme/page.mdx"
+const About = lazy(() => import("./routes/about/page.mdx"))
+const Contact = lazy(() => import("./routes/contact/page.mdx"))
+const Markdown = lazy(() => import("./routes/markdown/page.mdx"))
+const Sample = lazy(() => import("./routes/sample/page.mdx"))
+const Table = lazy(() => import("./routes/table/page.mdx"))
+const Theme = lazy(() => import("./routes/theme/page.mdx"))
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={<RootLayout />}>
-                    <Route index path="/" element={<Home />} />
-
-                    <Route
-                        path="/about"
-                        element={
-                            <MDXProvider components={components}>
-                                <About />{" "}
-                            </MDXProvider>
-                        }
-                    />
-
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/markdown" element={<Markdown />} />
-                    {/* <Route path="/sample" element={<Sample />} />
-                    <Route path="/table" element={<Table />} />
-                    <Route path="/theme" element={<Theme />} /> */}
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <MDXProvider components={components}>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<RootLayout />}>
+                        <Route index path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/markdown" element={<Markdown />} />
+                        <Route path="/sample" element={<Sample />} />
+                        <Route path="/table" element={<Table />} />
+                        <Route path="/theme" element={<Theme />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </MDXProvider>
     )
 }
 
