@@ -91,9 +91,9 @@ const MenuItem = ({ item, level = 0 }) => {
 
     return (
         <li className="flex flex-col gap-1">
-            <a href={item.href} className={commonClasses}>
+            <Link to={item.href} className={commonClasses}>
                 {item.title}
-            </a>
+            </Link>
         </li>
     )
 }
