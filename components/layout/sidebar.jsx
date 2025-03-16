@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-// import Link from "next/link"
-import { useLocation } from "react-router"
+import { Link, useLocation } from "react-router-dom"
 
 const menuItems = [
     {

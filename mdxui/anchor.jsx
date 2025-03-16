@@ -1,5 +1,5 @@
 import { forwardRef } from "react"
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
 
 export const Anchor = forwardRef(({ href = "", children, newWindow, ...props }, forwardedRef) => {
     if (newWindow) {

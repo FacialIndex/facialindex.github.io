@@ -37,6 +37,7 @@ import { DEFAULT_REHYPE_PRETTY_CODE_OPTIONS, rehypeAttachCodeMeta, rehypeParseCo
 export default defineConfig({
     plugins: [
         mdx({
+            providerImportSource: "@mdx-js/react",
             remarkPlugins: [
                 // remarkMermaid,
                 remarkGfm,

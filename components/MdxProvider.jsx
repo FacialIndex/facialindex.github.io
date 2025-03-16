@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Anchor } from "@/mdxui/anchor"
 import {
     Tr,
@@ -74,7 +75,6 @@ const components = {
     // Select,
     OptionTable,
 }
-
 
 const MdxProvider = ({ children }) => {
     return <MDXProvider components={components}>{children}</MDXProvider>

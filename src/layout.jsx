@@ -9,9 +9,7 @@ export default function RootLayout() {
         <div dir="ltr">
             <Header />
             <Body>
-                {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem> */}
                 <Outlet />
-                {/* </ThemeProvider> */}
             </Body>
             <Footer />
         </div>

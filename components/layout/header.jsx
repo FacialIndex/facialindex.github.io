@@ -2,7 +2,7 @@ import React from "react"
 import { Navbar } from "./navbar"
 import { Github, Twitter } from "@/icons"
 import { Logo } from "@/icons/logo"
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
 
 export function Header() {
     // console.log("go here")
