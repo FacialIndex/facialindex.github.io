@@ -1,5 +1,5 @@
 import cn from "clsx"
-import { Children, useEffect, useMemo, useState } from "react"
+import { Children, cloneElement, useEffect, useMemo, useState } from "react"
 import { Summary } from "."
 
 export function Details({ children, open, ...props }) {

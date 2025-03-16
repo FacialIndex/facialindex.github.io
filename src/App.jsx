@@ -1,5 +1,4 @@
 import RootLayout from "./layout"
-import { Home } from "@/src/routes/home/Home"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Suspense, lazy } from "react"
 
@@ -9,7 +8,7 @@ import { Suspense, lazy } from "react"
 // const Sample = lazy(() => import("./routes/sample/page.mdx"))
 // const Table = lazy(() => import("./routes/table/page.mdx"))
 // const Theme = lazy(() => import("./routes/theme/page.mdx"))
-
+import Home from "./routes/home/page.mdx"
 import About from "./routes/about/page.mdx"
 import Contact from "./routes/contact/page.mdx"
 import Markdown from "./routes/markdown/page.mdx"
