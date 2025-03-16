@@ -18,6 +18,7 @@
         "@mdx-js/rollup": "^3.1.0",
         "@next/mdx": "^15.2.2",
         "@popperjs/core": "^2.11.8",
+        "@rollup/rollup-darwin-arm64": "^4.35.0",
         "@shikijs/twoslash": "^3.2.1",
         "@tailwindcss/vite": "^4.0.14",
         "@types/mdx": "^2.0.13",
