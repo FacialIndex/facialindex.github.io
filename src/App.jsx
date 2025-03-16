@@ -1,10 +1,11 @@
 import RootLayout from "./layout"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { MDXProvider } from "@mdx-js/react"
 import { Suspense, lazy } from "react"
-import MdxProvider from "@/components/MdxProvider"
+import MdxProviderWrapper from "@/components/MdxProviderWrapper"
 
-const Home = lazy(() => import("./routes/home/page.mdx"))
-const About = lazy(() => import("./routes/about/page.mdx"   ))
+import { Home } from "./routes/home/Home"
+const About = lazy(() => import("./routes/about/page.mdx"))
 const Contact = lazy(() => import("./routes/contact/page.mdx"))
 const Markdown = lazy(() => import("./routes/markdown/page.mdx"))
 const Sample = lazy(() => import("./routes/sample/page.mdx"))
@@ -18,10 +19,9 @@ const Theme = lazy(() => import("./routes/theme/page.mdx"))
 // import Table from "./routes/table/page.mdx"
 // import Theme from "./routes/theme/page.mdx"
 
-
 function App() {
     return (
-        <MdxProvider>
+        <MdxProviderWrapper>
             {/* <Suspense fallback={<div>Loading...</div>}> */}
             <Routes>
                 <Route element={<RootLayout />}>
@@ -35,7 +35,7 @@ function App() {
                 </Route>
             </Routes>
             {/* </Suspense> */}
-        </MdxProvider>
+        </MdxProviderWrapper>
     )
 }
 

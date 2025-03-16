@@ -76,8 +76,8 @@ const components = {
     OptionTable,
 }
 
-const MdxProvider = ({ children }) => {
+const MdxProviderWrapper = ({ children }) => {
     return <MDXProvider components={components}>{children}</MDXProvider>
 }
 
-export default MdxProvider
+export default MdxProviderWrapper
