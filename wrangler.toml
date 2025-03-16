@@ -6,7 +6,3 @@ compatibility_date = "2025-02-22"
 [env.production.vars]
 NODE_VERSION = "22.14.0"
 ENVIRONMENT = "production"
-
-[[rules]]
-globs = ["**"]
-serve_static = true
