@@ -6,12 +6,19 @@ import { Home } from "@/src/routes/home/Home"
 // const Home = lazy(() => import("./pages/Home"));
 // const About = lazy(() => import("./pages/About"));
 // const Page = lazy(() => import("./pages/Page"));
-// const NotFound = lazy(() => import("./pages/NotFound"));s
+// const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
     return (
         <>
-            <h1>Hello World</h1>
+            <h1>Vite + React</h1>
+            <div className="card">
+                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+                <p>
+                    Edit <code>src/App.jsx</code> and save to test HMR
+                </p>
+            </div>
+            <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
         </>
     )
 }

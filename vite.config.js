@@ -37,7 +37,28 @@ import { DEFAULT_REHYPE_PRETTY_CODE_OPTIONS, rehypeAttachCodeMeta, rehypeParseCo
 export default defineConfig({
     plugins: [
         mdx({
-            remarkPlugins: [remarkGfm], // Enables GitHub Flavored Markdown
+            remarkPlugins: [
+                // remarkMermaid,
+                remarkGfm,
+                remarkMdxFrontMatter,
+                remarkParse,
+                remarkRehype,
+                remarkMath,
+                remarkMdxDisableExplicitJsx,
+                remarkCustomHeadingId,
+                // remarkMdxTitle,
+                [remarkHeadings, { exportName: "useTOC" }],
+                [
+                    remarkLinkRewrite,
+                    {
+                        pattern: /\.mdx?(?:(?=[#?])|$)/,
+                        replace: "",
+                        excludeExternalLinks: true,
+                    },
+                ],
+                remarkStaticImage,
+                [remarkStructurize, { codeblocks: true }],
+            ], // Enables GitHub Flavored Markdown
             rehypePlugins: [], // Enables syntax highlighting
         }),
         tailwindcss(),
