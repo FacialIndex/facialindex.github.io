@@ -4,7 +4,7 @@ import cn from "clsx"
 
 const EXTERNALHREFREGEX = /https?:\/\//
 
-export const Link = ({ href = "", className, ...props }) => (
+export const AnchorLink = ({ href = "", className, ...props }) => (
     <Anchor
         href={href}
         newWindow={EXTERNALHREFREGEX.test(href)}
@@ -13,7 +13,7 @@ export const Link = ({ href = "", className, ...props }) => (
     />
 )
 
-const A = ({ href = "", ...props }) => <Anchor href={href} newWindow={EXTERNALHREFREGEX.test(href)} {...props} />
+// const A = ({ href = "", ...props }) => <Anchor href={href} newWindow={EXTERNALHREFREGEX.test(href)} {...props} />
 
 const components = {
     h1: (props) => <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100" {...props} />,
@@ -40,7 +40,7 @@ const components = {
         />
     ),
     hr: (props) => <hr className="my-8 border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400" {...props} />,
-    a: Link,
+    a: AnchorLink,
     table: (props) => <Table className="openhuman-scrollbar mt-6 p-0 first:mt-0" {...props} />,
     p: (props) => <p className="mt-6 leading-7 first:mt-0" {...props} />,
     tr: Tr,
@@ -51,5 +51,4 @@ const components = {
     pre: Pre,
     code: Code,
 }
-
 export default components

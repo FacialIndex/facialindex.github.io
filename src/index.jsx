@@ -9,7 +9,7 @@ import About from "./routes/about/page.mdx"
 import Contact from "./routes/contact/page.mdx"
 import Markdown from "./routes/markdown/page.mdx"
 import { MDXProvider } from "@mdx-js/react"
-import { components } from "./mdxComponents.jsx"
+import components from "./mdxComponents.jsx"
 // import Sample from "./routes/sample/page.mdx"
 // import Table from "./routes/table/page.mdx"
 // import Theme from "./routes/theme/page.mdx"
@@ -22,20 +22,7 @@ const Home = lazy(() => import("./routes/home/Home.jsx"))
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <MDXProvider components={components}>
-            <BrowserRouter>
-                <Routes>
-                    <Route element={<RootLayout />}>
-                        <Route index path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/markdown" element={<Markdown />} />
-                        {/* <Route path="/sample" element={<Sample />} />
-                    <Route path="/table" element={<Table />} />
-                    <Route path="/theme" element={<Theme />} /> */}
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </MDXProvider>
+        <App />
+        {/* </MDXProvider> */}
     </StrictMode>
 )

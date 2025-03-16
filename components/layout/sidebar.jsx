@@ -59,9 +59,9 @@ const MenuItem = ({ item, level = 0 }) => {
         return (
             <li>
                 <div className="flex items-center">
-                    <a href={item.href} className={commonClasses + " flex-1"} onClick={() => setIsOpen(!isOpen)}>
+                    <Link to={item.href} className={commonClasses + " flex-1"} onClick={() => setIsOpen(!isOpen)}>
                         {item.title}
-                    </a>
+                    </Link>
                     <button onClick={() => setIsOpen(!isOpen)} className="p-1 hover:bg-gray-100 dark:hover:bg-primary-100/5 rounded-md">
                         <svg
                             fill="none"

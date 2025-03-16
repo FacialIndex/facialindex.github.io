@@ -2,24 +2,48 @@
 import RootLayout from "./layout"
 
 import { Home } from "@/src/routes/home/Home"
+import components from "./mdxComponents"
+import { BrowserRouter, Route, Routes } from "react-router"
+import { MDXProvider } from "@mdx-js/react"
 // // Lazy load components
 // const Home = lazy(() => import("./pages/Home"));
 // const About = lazy(() => import("./pages/About"));
 // const Page = lazy(() => import("./pages/Page"));
 // const NotFound = lazy(() => import("./pages/NotFound"));
 
+// import { About } from "./about/About.jsx"
+// import About from "./about/page.mdx"
+import About from "./routes/about/page.mdx"
+import Contact from "./routes/contact/page.mdx"
+import Markdown from "./routes/markdown/page.mdx"
+// import Sample from "./routes/sample/page.mdx"
+// import Table from "./routes/table/page.mdx"
+// import Theme from "./routes/theme/page.mdx"
+
 function App() {
     return (
-        <>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<RootLayout />}>
+                    <Route index path="/" element={<Home />} />
+
+                    <Route
+                        path="/about"
+                        element={
+                            <MDXProvider components={components}>
+                                <About />{" "}
+                            </MDXProvider>
+                        }
+                    />
+
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/markdown" element={<Markdown />} />
+                    {/* <Route path="/sample" element={<Sample />} />
+                    <Route path="/table" element={<Table />} />
+                    <Route path="/theme" element={<Theme />} /> */}
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
