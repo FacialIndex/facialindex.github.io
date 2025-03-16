@@ -1,7 +1,7 @@
 import RootLayout from "./layout"
 import { Route, Routes } from "react-router-dom"
 import { lazy } from "react"
-    
+
 import Home from "./routes/home/page.mdx"
 const About = lazy(() => import("./routes/about/page.mdx"))
 const Contact = lazy(() => import("./routes/contact/page.mdx"))
