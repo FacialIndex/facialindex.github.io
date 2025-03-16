@@ -97,7 +97,7 @@ export default defineConfig({
         react(),
         createHtmlPlugin(),
         SitemapPlugin({
-            hostname: "https://facialindex.github.io", // Change to your actual domain
+            hostname: "https://facialindex.github.io",
         }),
     ],
     resolve: {
